@@ -17,9 +17,7 @@ export const requestRobots = () => (dispatch) => {
     dispatch({
         type: REQUEST_ROBOTS_PENDING
     });
-    fetch('https://jsonplaceholder.typicode.com/users', {
-        headers: {'Access-Control-Allow-Origin':  '*'}
-    })
+    fetch('https://jsonplaceholder.typicode.com/users')
         .then(r => { return r.json()})
         .then(data => dispatch({
             type: REQUEST_ROBOTS_SUCCESS,
